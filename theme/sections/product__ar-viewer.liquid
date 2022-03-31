@@ -1,0 +1,123 @@
+{% style %}
+    .shopify-model-viewer-ui model-viewer {
+      --progress-bar-height: 2px;
+      --progress-bar-color: {{ settings.regular_color }};
+    }
+{% endstyle %}
+
+{% if product.handle contains 'mt300' %}
+{% assign ar_model = 'https://model3d.shopifycdn.com/models/o/c61816673477c6a3/mt300.glb' %}
+{% elsif product.handle contains 'mtd700r' %}
+{% assign ar_model = 'https://model3d.shopifycdn.com/models/o/1e00fb1fe159ff7f/mt700-single-table.glb' %}
+{% elsif product.handle contains 'mtd900r-wanderlust-soft-surface-treadmill-with-integrated-desk' %}
+{% assign ar_model = 'https://model3d.shopifycdn.com/models/o/5f77c1e6404da097/mt900-single-table.glb' %}
+{% elsif product.handle contains 'mtd900r-ara-soft-kybun-®-surface-treadmill-with-free-desk' %}
+{% assign ar_model = 'https://model3d.shopifycdn.com/models/o/1ccfbae00f3b4633/mt900r-free-desk-simplified.glb' %}
+{% elsif product.handle contains 'mtd800r' %}
+{% assign ar_model = 'https://model3d.shopifycdn.com/models/o/880e5a4838bd3952/mtd800r-simplified.glb' %}
+{% else %}
+{% assign ar_model = section.settings.ar_model %}
+{% endif %}
+
+<div class="page-width">
+    <h3 class="ar-title">{{section.settings.title | newline_to_br}}</h3>
+    <div class="ar-container">
+        <div class="shopify-model-viewer-ui shopify-model-viewer-ui--desktop">
+            <div class="shopify-model-viewer-ui__sr-only" data-shopify-model-viewer-ui-sr-only="" role="status"></div>
+            <model-viewer reveal="auto" toggleable="true" data-model-id="21625544573091" src="{{ ar_model }}" 
+            camera-controls="true" 
+            style="--poster-color: transparent; height:550px; width: 100%;" 
+            data-shopify-feature="1.7" 
+            alt="" 
+            ar-status="not-presenting"
+                data-js-focus-visible=""
+                class="" 
+                tabindex="0"></model-viewer>
+            <div class="shopify-model-viewer-ui__controls-overlay">
+                <button class="shopify-model-viewer-ui__button shopify-model-viewer-ui__button--poster" aria-label="3D-Viewer abspielen" hidden="" tabindex="0">
+                <svg focusable="false" class="shopify-model-viewer-ui__poster-control-icon">
+                <use xlink:path="#threed-icon-button-control" xlink:href="#threed-icon-button-control"></use>
+                </svg>
+                </button>
+                <div class="shopify-model-viewer-ui__controls-area shopify-model-viewer-ui__controls-area--playing">
+                    <button class="shopify-model-viewer-ui__button shopify-model-viewer-ui__button--control shopify-model-viewer-ui__button--zoom-in" aria-label="Heranzoomen" tabindex="0">
+                    <svg focusable="false" class="shopify-model-viewer-ui__control-icon"><use xlink:path="#zoom-in-icon" xlink:href="#zoom-in-icon"></use></svg>
+                    </button>
+                    <button class="shopify-model-viewer-ui__button shopify-model-viewer-ui__button--control shopify-model-viewer-ui__button--zoom-out" aria-label="Herauszoomen" tabindex="0">
+                        <svg focusable="false" class="shopify-model-viewer-ui__control-icon">
+                        <use xlink:path="#zoom-out-icon" xlink:href="#zoom-out-icon"></use>
+                        </svg>
+                    </button>
+                    <button class="shopify-model-viewer-ui__button shopify-model-viewer-ui__button--control shopify-model-viewer-ui__button--fullscreen" aria-label="Vollbildmodus starten" tabindex="0">
+                        <svg focusable="false" class="shopify-model-viewer-ui__control-icon shopify-model-viewer-ui__control-icon--enter-fullscreen">
+                        <use xlink:path="#enter-fullscreen-icon" xlink:href="#enter-fullscreen-icon"></use>
+                        </svg>
+                        <svg focusable="false" class="shopify-model-viewer-ui__control-icon shopify-model-viewer-ui__control-icon--exit-fullscreen">
+                        <use xlink:path="#exit-fullscreen-icon" xlink:href="#exit-fullscreen-icon"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ar-info">
+        <div class="left">
+            <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <path d="M18.8569 6L24 3L29.1431 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel"/>
+                <path d="M24 3V10.5" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="bevel"/>
+                <path d="M29.1431 42L24 45L18.8569 42" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel"/>
+                <path d="M24 45V37.5" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="bevel"/>
+                <path d="M6 19.455V13.5009L10.9828 10.5469" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel"/>
+                <path d="M6 13.5L12.3084 17.25" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="bevel"/>
+                <path d="M42 28.5469V34.5009L37.0172 37.455" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel"/>
+                <path d="M42 34.5L35.6916 30.75" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="bevel"/>
+                <path d="M10.9828 37.5009L6 34.5009V28.5469" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel"/>
+                <path d="M6 34.5L12.2475 30.75" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="bevel"/>
+                <path d="M37.0172 10.5469L42 13.5009V19.455" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel"/>
+                <path d="M42 13.5L35.6916 17.25" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="bevel"/>
+                <path d="M24 30V24L29.1431 21" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="bevel"/>
+                <path d="M24 24L18.8569 21" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="bevel"/>
+                </svg>
+            </div>
+            Use AR to see Walkolution<br/> in your workspace.
+        </div>
+
+        <div class="right">
+            Or drag it to browse the web
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.75175 9.19225C3.8932 9.05563 4.08265 8.98004 4.2793 8.98174C4.47595 8.98345 4.66406 9.06233 4.80311 9.20139C4.94217 9.34044 5.02105 9.52855 5.02276 9.7252C5.02446 9.92185 4.94887 10.1113 4.81225 10.2528L2.81125 12.253H4C4.18382 12.253 4.36121 12.3206 4.49851 12.4428C4.6358 12.565 4.72343 12.7334 4.74475 12.916L4.75 13.003C4.75 13.2019 4.67098 13.3927 4.53033 13.5333C4.38968 13.674 4.19891 13.753 4 13.753H1C0.801088 13.753 0.610322 13.674 0.46967 13.5333C0.329018 13.3927 0.25 13.2019 0.25 13.003V10.003C0.25 9.80409 0.329018 9.61332 0.46967 9.47267C0.610322 9.33202 0.801088 9.253 1 9.253C1.19891 9.253 1.38968 9.33202 1.53033 9.47267C1.67098 9.61332 1.75 9.80409 1.75 10.003V11.1932L3.75175 9.19225ZM10.0037 13.753C9.80484 13.753 9.61407 13.674 9.47342 13.5333C9.33277 13.3927 9.25375 13.2019 9.25375 13.003C9.25375 12.8041 9.33277 12.6133 9.47342 12.4727C9.61407 12.332 9.80484 12.253 10.0037 12.253H11.191L9.19225 10.2528C9.06312 10.1236 8.98554 9.95178 8.97408 9.76951C8.96262 9.58724 9.01806 9.40705 9.13 9.26275L9.19225 9.19225C9.3329 9.05165 9.52363 8.97266 9.7225 8.97266C9.92137 8.97266 10.1121 9.05165 10.2528 9.19225L12.2537 11.1947V10.003C12.2538 9.8193 12.3212 9.642 12.4433 9.50472C12.5654 9.36744 12.7336 9.27974 12.916 9.25825L13.0037 9.253C13.2027 9.253 13.3934 9.33202 13.5341 9.47267C13.6747 9.61332 13.7537 9.80409 13.7537 10.003V13.003C13.7537 13.2019 13.6747 13.3927 13.5341 13.5333C13.3934 13.674 13.2027 13.753 13.0037 13.753H10.0037ZM4 0.25C4.19891 0.25 4.38968 0.329018 4.53033 0.46967C4.67098 0.610322 4.75 0.801088 4.75 1C4.75 1.19891 4.67098 1.38968 4.53033 1.53033C4.38968 1.67098 4.19891 1.75 4 1.75H2.81275L4.8115 3.751C4.94063 3.88014 5.01821 4.05197 5.02967 4.23424C5.04113 4.41651 4.98569 4.5967 4.87375 4.741L4.8115 4.8115C4.67085 4.9521 4.48012 5.03109 4.28125 5.03109C4.08238 5.03109 3.89165 4.9521 3.751 4.8115L1.75 2.809V4C1.74998 4.1837 1.68253 4.361 1.56046 4.49828C1.43839 4.63556 1.27019 4.72326 1.08775 4.74475L1 4.75C0.801088 4.75 0.610322 4.67098 0.46967 4.53033C0.329018 4.38968 0.25 4.19891 0.25 4V1C0.25 0.801088 0.329018 0.610322 0.46967 0.46967C0.610322 0.329018 0.801088 0.25 1 0.25H4ZM13.0037 0.25C13.2027 0.25 13.3934 0.329018 13.5341 0.46967C13.6747 0.610322 13.7537 0.801088 13.7537 1V4C13.7537 4.19891 13.6747 4.38968 13.5341 4.53033C13.3934 4.67098 13.2027 4.75 13.0037 4.75C12.8048 4.75 12.6141 4.67098 12.4734 4.53033C12.3328 4.38968 12.2537 4.19891 12.2537 4V2.809L10.2528 4.8115C10.1236 4.94063 9.95178 5.01821 9.76951 5.02967C9.58724 5.04113 9.40705 4.98569 9.26275 4.87375L9.19225 4.8115C9.05165 4.67085 8.97266 4.48012 8.97266 4.28125C8.97266 4.08238 9.05165 3.89165 9.19225 3.751L11.1918 1.75H10.0037C9.82005 1.74998 9.64275 1.68253 9.50547 1.56046C9.36819 1.43839 9.28049 1.27019 9.259 1.08775L9.25375 1C9.25375 0.801088 9.33277 0.610322 9.47342 0.46967C9.61407 0.329018 9.80484 0.25 10.0037 0.25H13.0037Z" fill="#999999"/>
+            </svg>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "AR Viewer",
+    "class": "ar-viewer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "ar_model",
+        "label": "AR model URL",
+        "default": "https:\/\/cdn.shopify.com\/s\/files\/1\/0596\/9074\/6056\/files\/mt900r-free-desk.glb?v=1637157963"
+      },
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Title",
+        "default": "Take a closer look at the Walkolution"
+      }
+    ],
+    "presets": [
+      {
+        "name": "AR Viewer",
+        "category": "Layout",
+        "settings": {
+
+        }
+      }
+    ]
+  }
+{% endschema %}

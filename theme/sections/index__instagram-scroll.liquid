@@ -1,0 +1,89 @@
+<div class="page-width">
+    <h3 class="section-title">{{section.settings.title | newline_to_br}}</h3>
+
+    <div class="instagram-stories">        
+        {% for block in section.blocks %}
+        <div class="story">
+            <div class="story-wrapper">
+              <div class="icon-time">09:40</div>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-wifi">
+                <path d="M8 3.99935C10.358 3.99935 12.558 4.90135 14.1953 6.53868L15.138 5.59602C13.2493 3.70668 10.714 2.66602 8 2.66602C5.286 2.66668 2.75067 3.70668 0.862 5.59602L1.80467 6.53868C3.442 4.90135 5.642 3.99935 8 3.99935ZM11.7807 9.53735C9.73133 7.48802 6.26867 7.48802 4.21933 9.53735L5.162 10.48C6.7 8.94202 9.3 8.94202 10.838 10.48L11.7807 9.53735Z" fill="#4E4E4E"/>
+                <path d="M13.6247 7.52919C10.5767 4.47985 5.42401 4.47985 2.37601 7.52919L3.31867 8.47185C5.85667 5.93385 10.144 5.93385 12.682 8.47185L13.6247 7.52919Z" fill="#4E4E4E"/>
+                <path d="M7.99999 13.3327C8.73637 13.3327 9.33332 12.7357 9.33332 11.9993C9.33332 11.263 8.73637 10.666 7.99999 10.666C7.26361 10.666 6.66666 11.263 6.66666 11.9993C6.66666 12.7357 7.26361 13.3327 7.99999 13.3327Z" fill="#4E4E4E"/>
+              </svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-battery">
+                <g clip-path="url(#clip0_159_744)">
+                <path d="M2 6H12V10H2V6Z" fill="#4E4E4E"/>
+                <path d="M2 4C1.46957 4 0.960859 4.21071 0.585786 4.58579C0.210714 4.96086 0 5.46957 0 6L0 10C0 10.5304 0.210714 11.0391 0.585786 11.4142C0.960859 11.7893 1.46957 12 2 12H12C12.5304 12 13.0391 11.7893 13.4142 11.4142C13.7893 11.0391 14 10.5304 14 10V6C14 5.46957 13.7893 4.96086 13.4142 4.58579C13.0391 4.21071 12.5304 4 12 4H2ZM12 5C12.2652 5 12.5196 5.10536 12.7071 5.29289C12.8946 5.48043 13 5.73478 13 6V10C13 10.2652 12.8946 10.5196 12.7071 10.7071C12.5196 10.8946 12.2652 11 12 11H2C1.73478 11 1.48043 10.8946 1.29289 10.7071C1.10536 10.5196 1 10.2652 1 10V6C1 5.73478 1.10536 5.48043 1.29289 5.29289C1.48043 5.10536 1.73478 5 2 5H12ZM16 8C16 8.39782 15.842 8.77936 15.5607 9.06066C15.2794 9.34196 14.8978 9.5 14.5 9.5V6.5C14.8978 6.5 15.2794 6.65804 15.5607 6.93934C15.842 7.22064 16 7.60218 16 8Z" fill="#4E4E4E"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_159_744">
+                <rect width="16" height="16" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            <img src="{{ block.settings.image | img_url: '320x570' }}" alt="" {% if block.settings.video_link != empty%}style="opacity: 0;"{% endif %}>
+            {% if block.settings.video_link != empty%}
+              <video width="320" height="568" muted loop playsinline>
+                <source src="{{block.settings.video_link}}" type="video/mp4">
+              </video>
+            {% endif %}
+            <span>{{ block.settings.description }}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Instagram scroll",
+    "class": "instagram-scroll",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Title",
+        "default": "Why people loves Walkolution"
+      },
+      {
+        "type": "url",
+        "id": "watch_stories",
+        "label": "Watch stories URL"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "instagram-story",
+        "name": "Instagram Story",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "570 x 320px"
+          },
+          {
+            "type": "text",
+            "id": "video_link",
+            "label": "Video URL"
+          },
+          {
+            "type": "text",
+            "id": "description",
+            "label": "Description"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Instagram scroll",
+        "category": "Layout",
+        "settings": {
+
+        }
+      }
+    ]
+  }
+{% endschema %}

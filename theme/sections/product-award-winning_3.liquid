@@ -1,0 +1,41 @@
+<div class="section-title">{{ section.settings.title }}</div>
+<div class="subtitle">{{ section.settings.subtitle }}</div>
+<div class="icons-wrap">
+  {% for block in section.blocks %}
+    <div class="icon-box">
+      {{ block.settings.image | img_url: '750x' | img_tag  }}
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Award Winning",
+  "class": "product-award-winning",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Icon",
+      "type": "icon",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

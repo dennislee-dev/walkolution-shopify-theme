@@ -1,0 +1,69 @@
+<style>
+    .image-with-text-overaly-section {
+        height: 950px;
+        margin: 0 110px;
+        position: relative;
+        background-image: url({{ section.settings.desk_image | img_url: '1800x' }});
+        background-repeat: no-repeat;background-size:
+        cover;background-size:
+        cover;background-position: center;
+    }
+    
+    .image-with-text-overaly-section .content {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 48px;
+        text-align: center;
+        color: #fff;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 770px;
+        margin: auto;
+    }
+
+    @media (max-width: 768px) {
+        .image-with-text-overaly-section {
+            height: 450px;
+            margin: 0;
+            background-image: url({{ section.settings.mobile_image | img_url: '1800x' }});
+            background-repeat: no-repeat;background-size:
+            cover;background-size:
+            cover;background-position: center;
+        }
+
+        .image-with-text-overaly-section .content {
+            max-width: 280px;
+            font-size: 32px;
+            line-height: 36px;
+        }
+    }
+</style>
+<div class="image-with-text-overaly-section">
+    <div class="content">{{ section.settings.text }}</div>
+</div>
+{% schema %}
+{
+    "name": "Image with text",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "desk_image",
+            "label": "Desk Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "Mobile Image"
+        },
+        {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+        }
+    ]
+}
+{% endschema %}

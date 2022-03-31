@@ -1,0 +1,79 @@
+{% comment %}
+** Custom HTML - dynamic **
+- Draggable section
+{% endcomment %}
+
+{% comment %} Assign object as block or section {% endcomment %}
+{% if type == 'block' %}
+  {%- assign object = block -%}
+{% else %}
+  {%- assign object = section -%}
+{% endif %}
+
+{% comment %} Content settings {% endcomment %}
+{%- assign html_content = object.settings.html_content -%}
+{% comment %} End content settings {% endcomment %}
+
+{% style %}
+  #shopify-section-{{ object.id }} {
+    padding-top: {{ object.settings.padding_top }}px;
+    padding-bottom: {{ object.settings.padding_bottom }}px;
+    padding-left: {{ object.settings.padding_left }}px;
+    padding-right: {{ object.settings.padding_right }}px;
+    {% if object.settings.width == 'wide' -%}
+      width: 100%;
+    {%- elsif object.settings.width == 'half' -%}
+      width: 50%;
+    {%- endif %}
+  }
+  {% render 'css-loop',
+          css: object.settings.custom_css,
+          id: object.id
+  %}
+{% endstyle %}
+
+<section class="section {{ object.settings.css_class }}
+                is-width-{{ object.settings.width }}
+                {% if background_alpha != 0 or gradient_alpha != 0  %}
+                  has-background
+                {% endif %}
+                "
+          data-section-id="{{ section.id }}">
+          <div class="container">
+            <div class="detail3_container">
+                <div class="detail3_block_wrapper">
+                    <div class="detail3_icon_wrapper">
+                        <img src="{{ object.settings.first_icon | img_url: '2000x'}}" alt="{{ object.settings.first_icon.alt }}">
+                    </div>
+                    <div class="detail3_title_wrapper">
+                        {{ object.settings.first_title }}
+                    </div>
+                    <div class="detail3_subtitle_wrapper">
+                        {{ object.settings.first_subtitle }}
+                    </div>
+                </div>
+                <div class="detail3_block_wrapper">
+                    <div class="detail3_icon_wrapper">
+                        <img src="{{ object.settings.second_icon | img_url: '2000x'}}" alt="{{ object.settings.second_icon.alt }}">
+                    </div>
+                    <div class="detail3_title_wrapper">
+                        {{ object.settings.second_title }}
+                    </div>
+                    <div class="detail3_subtitle_wrapper">
+                        {{ object.settings.second_subtitle }}
+                    </div>
+                </div>
+                <div class="detail3_block_wrapper">
+                    <div class="detail3_icon_wrapper">
+                        <img src="{{ object.settings.third_icon | img_url: '2000x'}}" alt="{{ object.settings.third_icon.alt }}">
+                    </div>
+                    <div class="detail3_title_wrapper">
+                        {{ object.settings.third_title }}
+                    </div>
+                    <div class="detail3_subtitle_wrapper">
+                        {{ object.settings.third_subtitle }}
+                    </div>
+                </div>
+            </div>
+          </div>
+</section>

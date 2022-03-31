@@ -1,0 +1,25 @@
+<div class="pretitle">{{ section.settings.pretitle }}</div>
+<div class="section-title">{{ section.settings.title }}</div>
+{% schema %}
+{
+  "name": "Image, Text and Video",
+  "class": "image-text-video-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "pretitle",
+      "label": "Pretitle"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video url"
+    }
+  ]
+}
+{% endschema %}

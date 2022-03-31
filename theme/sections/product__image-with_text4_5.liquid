@@ -1,0 +1,47 @@
+<div class="piwt-section">
+    <div class="piwt-left order-2">
+        {% if section.settings.pre_title != blank %}
+            <h3 class="piwt-prep-title">{{ section.settings.pre_title }}</h3>
+        {% endif %}
+        {% if section.settings.title != blank %}
+            <h2 class="piwt-title">{{ section.settings.title }}</h2>
+        {% endif %}
+        {% if section.settings.text != blank %}
+            <div class="piwt-text">
+                {{ section.settings.text }}
+            </div>
+        {% endif %}
+    </div>
+    <div class="piwt-right order-1">        
+        {% if section.settings.image != blank %}
+            {{ section.settings.image | img_url: '1200x' | img_tag }}
+        {% endif %}
+    </div>
+</div>
+{% schema %}
+{
+    "name": "Product Image with Text 4",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "text",
+            "id": "pre_title",
+            "label": "SubTitle"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "richtext",
+            "id": "text",
+            "label": "text"
+        }
+    ]
+}
+{% endschema %}

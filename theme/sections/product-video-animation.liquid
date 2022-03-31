@@ -1,0 +1,112 @@
+<link rel="stylesheet" href="{{ 'animation.css' | asset_url }}" type="text/css" />
+<section id="pdp-video-animation" class="section-value-props no-background with-video" data-component-list="ValueProps" data-analytics-section-engagement="name:value props">
+    <div class="sticky-wrapper">
+        <div class="video-is-in-viewport"></div>
+        <div class="parallax-wrapper" data-anim-keyframe='{"start":"a0b - 100vh","end":"a0b","y":[0, "20vh"],"anchors": [".section-value-props"]}'>
+            <div class="video-wrapper" data-anchor=".section-value-props">
+                <video currentTime="6" muted playsinline preload="{{product.metafields.animation.video}}" src="{{product.metafields.animation.video}}"></video>
+            </div>
+            <div class="scrim" data-anim-keyframe='{"start":"a0b - 100vh","end":"a0b","opacity":[0.999,0.001],"anchors": [".section-hero"]}'></div>
+        </div>
+    </div>
+    <div class="section-content">
+        <ul class="value-prop-list" data-anim-keyframe='{"start":"a0t - 40vh","end":"a0t + 40vh","opacity":[0.001,0.999],"anchors":[".section-value-props#pdp-video-animation .section-content"]}'>
+            <li class="value-prop value-prop-0">
+                <p class="typography-headline-super"><b>Stepless depth adjustability</b></p>
+            </li>
+            <li class="value-prop value-prop-1">
+                <p class="typography-headline-super"><b>Stepless Height adjustability</b></p>
+            </li>
+            <li class="value-prop value-prop-2">
+                <p class="typography-headline-super"><b>As motorless, works by your own movement</b></p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<script src="{{ 'animation.js' | asset_url }}" type="text/javascript" charset="utf-8"></script>
+
+<script>
+    defer(function () {
+        jQuery(document).ready(function($) {
+        $('head').append(`
+        <link rel="prefetch" href="{{product.metafields.animation.video}}">
+        `);
+        });
+    });
+</script>
+
+<style>
+.section-value-props#pdp-video-animation .sticky-wrapper {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    margin-top: -100vh;
+    overflow: hidden;
+}
+.section-value-props#pdp-video-animation .parallax-wrapper {
+    pointer-events: none;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.section-value-props#pdp-video-animation .scrim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+.section-value-props#pdp-video-animation .video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+.section-value-props#pdp-video-animation .video-wrapper video {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.section-value-props.no-background.with-video ul {
+    background: transparent;
+    padding: 20vh 0;
+}
+.section-value-props.no-background.with-video ul::before {
+    background: none;
+}
+.section-value-props.no-background.with-video .value-prop {
+    padding-right: 100px;
+    height: 50vh;
+}
+.section-value-props.no-background.with-video .value-prop .typography-headline-super {
+    margin-left: auto;
+}
+</style>
+{% schema %}
+{
+  "name": "Video animation",
+  "class": "video-animation",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "Video animation",
+      "category": "Video"
+    }
+  ]
+}
+{% endschema %}

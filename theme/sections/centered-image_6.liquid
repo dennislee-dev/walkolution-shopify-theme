@@ -1,0 +1,134 @@
+<div class="desktop-only">
+<section class="section-value-props resize-image no-background" data-component-list="ValueProps" data-analytics-section-engagement="name:value props">
+    <!--
+    <div class="sticky-wrapper">
+        <div class="parallax-wrapper" data-anim-keyframe='{"start":"a0b - 100vh","end":"a0b","y":[0, "20vh"],"anchors": [".section-value-props"]}'>
+            <div class="video-wrapper" data-component-list="InlineVideo" data-anchor=".section-value-props" data-video-base-path="https://www.apple.com/105/media/us/airpods-max/2020/996b980b-3131-44f1-af6c-fe72f9b3bfb5/anim/supercut">
+                <picture id="overview-value-props-startframe-1" class="overview-value-props-startframe">
+                    <source srcset="https://www.apple.com/v/airpods-max/d/images/overview/value_props_startframe__fce6e99juk6e_small.jpg, /v/airpods-max/d/images/overview/value_props_startframe__fce6e99juk6e_small_2x.jpg 2x" media="(max-width:734px)">
+                    <source srcset="https://www.apple.com/v/airpods-max/d/images/overview/value_props_startframe__fce6e99juk6e_medium.jpg, /v/airpods-max/d/images/overview/value_props_startframe__fce6e99juk6e_medium_2x.jpg 2x" media="(max-width:1068px)">
+                    <source srcset="https://www.apple.com/v/airpods-max/d/images/overview/value_props_startframe__fce6e99juk6e_large.jpg, /v/airpods-max/d/images/overview/value_props_startframe__fce6e99juk6e_large_2x.jpg 2x" media="(min-width:0px)">
+                    <img src="https://www.apple.com/v/airpods-max/d/images/overview/value_props_startframe__fce6e99juk6e_large.jpg" class="overview-value-props-startframe-img" alt="">
+                </picture>
+                <video muted playsinline loop preload="none" src="https://www.apple.com/105/media/us/airpods-max/2020/996b980b-3131-44f1-af6c-fe72f9b3bfb5/anim/supercut/large.mp4"></video>
+            </div>
+            <div class="scrim" data-anim-keyframe='{"start":"a0b - 100vh","end":"a0b","opacity":[0.999,0.001],"anchors": [".section-hero"]}'></div>
+        </div>
+        <div class="controls">
+            <div class="control circle"></div>
+            <button class="control pause-icon" aria-hidden="false" aria-label="Pause background video" data-analytics-title="pause | value prop video" data-analytics-click="prop3:pause | value prop video"></button>
+            <button class="control play-icon" aria-hidden="true" aria-label="Play background video" data-analytics-title="play | value prop video" data-analytics-click="prop3:play | value prop video"></button>
+        </div>
+    </div>-->
+    <div class="section-content">
+        <ul class="value-prop-list" data-anim-keyframe='{"start":"a0t - 60vh","end":"a0t + 40vh","opacity":[0.999,0.999],"anchors":[".section-value-props .section-content"]}'>
+            <div class="resizable-image">
+              <div style="background-image: url({{ section.settings.image | img_url: '1600x'}}); "></div>
+            <span class="clear-elements"></span>
+              <div style="background-image: url({{ section.settings.image2 | img_url: '1600x'}}); "></div>
+            </div>
+            <li class="value-prop value-prop-0 no-content height40"></li>
+            <li class="value-prop value-prop-1 align-right">
+                <p class="typography-headline-super"><b>{{section.settings.title1}}</b><br/><br/>{{ section.settings.subtitle1 }}</p>
+            </li>
+            <li class="value-prop value-prop-2 align-left">
+                <p class="typography-headline-super"><b>{{section.settings.title2}}</b><br/><br/>{{ section.settings.subtitle2 }}</p>
+            </li>
+            <li class="value-prop value-prop-3 align-right">
+                <p class="typography-headline-super"><b>{{section.settings.title3}}</b><br/><br/>{{ section.settings.subtitle3 }}</p>
+            </li>
+            <li class="value-prop value-prop-4 align-left">
+                <p class="typography-headline-super"><b>{{section.settings.title4}}</b><br/><br/>{{ section.settings.subtitle4 }}</p>
+            </li>
+        </ul>
+    </div>
+</section>
+</div>
+
+<div class="mobile-only">
+  <div class="a-new-concept-mobile">
+    <img src="{{ section.settings.image | img_url: '768x'}}" alt="{{ section.settings.image.alt }}">
+    <h2>A new concept to reinvent your workplace</h2>
+    <p>Staying effortlessly in motion throughout the day and thus keeping the body healthy is the key to productivity in our modern working world.</p>
+  </div>
+</div>
+
+<script>
+  defer(function () {
+  jQuery(document).ready(function($) {
+    $('head').append(`
+    <link rel="prefetch" href="{{ section.settings.image | img_url: '1600x'}}">
+    <link rel="prefetch" href="{{ section.settings.image2 | img_url: '1600x'}}">
+    `);
+
+  
+    $(window).on('scroll', function() {
+      var elementDistances = $('.value-prop-list .resizable-image')[0].getBoundingClientRect();
+      if(elementDistances.top > 0 )  {
+        $('.value-prop-list .resizable-image').parent().removeClass("reached-top").addClass("not-top-yet");
+      } else {
+        $('.value-prop-list .resizable-image').parent().removeClass("not-top-yet").addClass("reached-top");
+      }
+    })
+  });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Centered Image",
+  "class": "centered-image-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Main Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Secondary Image"
+    },
+    {
+      "type": "text",
+      "id": "title1",
+      "label": "Title1"
+    },
+    {
+      "type": "text",
+      "id": "subtitle1",
+      "label": "Subtitle1"
+    },
+    {
+      "type": "text",
+      "id": "title2",
+      "label": "Title2"
+    },
+    {
+      "type": "text",
+      "id": "subtitle2",
+      "label": "Subtitle2"
+    },
+    {
+      "type": "text",
+      "id": "title3",
+      "label": "Title3"
+    },
+    {
+      "type": "text",
+      "id": "subtitle3",
+      "label": "Subtitle3"
+    },
+    {
+      "type": "text",
+      "id": "title4",
+      "label": "Title4"
+    },
+    {
+      "type": "text",
+      "id": "subtitle4",
+      "label": "Subtitle4"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,50 @@
+{% comment %}
+Required values
+menu_link: linklist
+______________
+Optional values
+linklist_class: <string>
+link_setting: <string>
+{% endcomment %}
+
+<div class="footer__menu is-justify-space-between {{ linklist_class }}">
+{% if menu_link != blank %}
+  {% assign menu = linklists[menu_link] %}
+
+  {% comment %}
+  <p class="footer__heading">
+    {% if link_setting != blank %}<a href="{{ link_setting }}">{% endif %}
+      {{ menu.title }}
+    {% if link_setting != blank %}</a>{% endif %}
+  </p>
+  {% endcomment %}
+  
+  <!-- <div id="mobile_newsletter"></div>
+  <div id="mobile_national"></div> -->
+  <ul class="footer-menu parent" style="width: {{ 100 | divided_by: 2 }}%;">
+    <p class="footer__heading">
+      {{ linklists[block.settings.menu].title }}
+    </p>
+      {% for link in linklists[block.settings.menu].links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %} 
+  </ul>
+
+{% else %}
+  {% comment %}
+    <p class="footer__heading">{{ 'homepage.onboarding.menu_title' | t }}</p>
+    <p>{{ 'homepage.onboarding.no_content' | t }}</p>
+  {% endcomment %}
+  
+{% endif %}
+</div>
+
+<style>
+ul.footer-menu li a{
+  color: #000;
+  line-height: 30px;
+}
+ul.footer-menu p.footer__heading{
+  width: 100%;
+}
+</style>

@@ -1,0 +1,74 @@
+{% comment %}
+** Custom HTML - dynamic **
+- Draggable section
+{% endcomment %}
+
+{% comment %} Assign object as block or section {% endcomment %}
+{% if type == 'block' %}
+  {%- assign object = block -%}
+{% else %}
+  {%- assign object = section -%}
+{% endif %}
+
+{% comment %} Content settings {% endcomment %}
+{%- assign html_content = object.settings.html_content -%}
+{% comment %} End content settings {% endcomment %}
+
+{% style %}
+  #shopify-section-{{ object.id }} {
+    padding-top: {{ object.settings.padding_top }}px;
+    padding-bottom: {{ object.settings.padding_bottom }}px;
+    padding-left: {{ object.settings.padding_left }}px;
+    padding-right: {{ object.settings.padding_right }}px;
+    {% if object.settings.width == 'wide' -%}
+      width: 100%;
+    {%- elsif object.settings.width == 'half' -%}
+      width: 50%;
+    {%- endif %}
+  }
+  {% render 'css-loop',
+          css: object.settings.custom_css,
+          id: object.id
+  %}
+{% endstyle %}
+ 
+<section class="section {{ object.settings.css_class }}
+                is-width-{{ object.settings.width }}
+                {% if background_alpha != 0 or gradient_alpha != 0  %}
+                  has-background
+                {% endif %}
+                "
+          data-section-id="{{ section.id }}">
+          <div class="container featured-text__icons">
+            {% if object.settings.featured_text_icons_title != blank %}
+            <div class="section__title">
+                {{ object.settings.featured_text_icons_title }}
+            </div>
+            {% endif %}
+            {% if object.settings.featured_text_icons_text != blank %}
+            <div class="section__content">
+                {{ object.settings.featured_text_icons_text }}
+            </div>
+            {% endif %}
+            <div class="icons-wrap">
+                <div class="icon-item">
+                    {% render 'image-element',
+                        image: object.settings.icon_image_1,
+                        alt: image.alt
+                    %}
+                </div>
+                <div class="icon-item">
+                    {% render 'image-element',
+                        image: object.settings.icon_image_2,
+                        alt: image.alt
+                    %}
+                </div>
+                <div class="icon-item">
+                    {% render 'image-element',
+                        image: object.settings.icon_image_3,
+                        alt: image.alt
+                    %}
+                </div>
+            </div>
+          </div>
+</section>

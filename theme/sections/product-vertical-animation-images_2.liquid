@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="{{ 'animation.css' | asset_url }}" type="text/css" />
+<section id="pdp-vertical-animation-images" class="section-value-props pdp-vertical-animation-images" data-component-list="ValueProps" data-analytics-section-engagement="name:value props">
+    <div class="sticky-wrapper">        
+    </div>
+    <div class="section-content">
+        <ul class="value-prop-list centered-text" data-anim-keyframe='{"start":"a0t - 40vh","end":"a0t + 80vh","opacity":[0.999,0.999],"anchors":[".section-value-props .section-content"]}'>
+            <li class="value-prop value-prop-0" style="height: 50vh">
+                <p class="typography-headline-super"><b>Perfectly used for office work</b></p>
+            </li>
+            <li class="value-prop value-prop-1" style="height: 50vh">
+                <p class="typography-headline-super"><b>Type while you walk</b></p>
+            </li>
+            <li class="value-prop value-prop-2" style="height: 50vh">
+                <p class="typography-headline-super"><b>Walk as you work</b></p>
+            </li>
+            <li class="value-prop value-prop-3" style="height: 50vh">
+                <p class="typography-headline-super"><b>Life long fitness</b></p>
+            </li>
+        </ul>
+    </div>
+</section>
+<script src="{{ 'animation.js' | asset_url }}" type="text/javascript" charset="utf-8"></script>
+
+<style>
+.section-value-props:not(.no-background) .value-prop-list.show-0 { background-image: url({{'pdp-vertical-animation-slide0.jpg' | asset_url }}); }
+.section-value-props:not(.no-background) .value-prop-list.show-1 { background-image: url({{'pdp-vertical-animation-slide1.jpg' | asset_url }}); }
+.section-value-props:not(.no-background) .value-prop-list.show-2 { background-image: url({{'pdp-vertical-animation-slide2.jpg' | asset_url }}); }
+.section-value-props:not(.no-background) .value-prop-list.show-3 { background-image: url({{'pdp-vertical-animation-slide3.jpg' | asset_url }}); }
+.section-value-props:not(.no-background) .value-prop-list.show-4 { background-image: url({{'pdp-vertical-animation-slide4.png' | asset_url }}); }
+
+@media (max-width: 789px) {
+    .section-value-props:not(.no-background) .value-prop-list.show-0 { background-image: url({{'pdp-vertical-animation-slide0-mobile.jpg' | asset_url }}); }
+    .section-value-props:not(.no-background) .value-prop-list.show-1 { background-image: url({{'pdp-vertical-animation-slide1-mobile.jpg' | asset_url }}); }
+    .section-value-props:not(.no-background) .value-prop-list.show-2 { background-image: url({{'pdp-vertical-animation-slide2-mobile.jpg' | asset_url }}); }
+    .section-value-props:not(.no-background) .value-prop-list.show-3 { background-image: url({{'pdp-vertical-animation-slide3-mobile.jpg' | asset_url }}); }
+    .section-value-props:not(.no-background) .value-prop-list.show-4 { background-image: url({{'pdp-vertical-animation-slide4-mobile.jpg' | asset_url }}); }   
+}
+</style>
+<script>
+    defer(function () {
+        jQuery(document).ready(function($) {
+        $('head').append(`
+        <link rel="prefetch" href="{{'pdp-vertical-animation-slide0.jpg' | asset_url }}">
+        <link rel="prefetch" href="{{'pdp-vertical-animation-slide1.jpg' | asset_url }}">
+        <link rel="prefetch" href="{{'pdp-vertical-animation-slide2.jpg' | asset_url }}">
+        <link rel="prefetch" href="{{'pdp-vertical-animation-slide3.jpg' | asset_url }}">
+        <link rel="prefetch" href="{{'pdp-vertical-animation-slide4.png' | asset_url }}">
+        <link rel="prefetch" href="{{'pdp-vertical-animation-slide0-mobile.jpg' | asset_url }}">
+        <link rel="prefetch" href="{{'pdp-vertical-animation-slide1-mobile.jpg' | asset_url }}">
+        <link rel="prefetch" href="{{'pdp-vertical-animation-slide2-mobile.jpg' | asset_url }}">
+        <link rel="prefetch" href="{{'pdp-vertical-animation-slide3-mobile.jpg' | asset_url }}">
+        <link rel="prefetch" href="{{'pdp-vertical-animation-slide4-mobile.jpg' | asset_url }}">
+        `);
+        });
+    });
+</script>
+{% schema %}
+{
+  "name": "Vertical animation images",
+  "class": "vertical-animation-images",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "Vertical animation images",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}

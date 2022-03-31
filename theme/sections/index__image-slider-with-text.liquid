@@ -1,0 +1,65 @@
+{% assign mode = section.blocks | size %}
+{% assign mode = mode | times: 2 %}
+{% assign percent = 110.0 | divided_by: mode %}
+ 
+<div class="image__slider" data-image-slider>
+    {% for block in section.blocks %}
+        {% if block.type == 'image' and block.settings.image != blank %}
+            <div class="img__item">
+                    {% render 'image-element',
+                        image: block.settings.image,
+                        alt: image.alt,
+                        section_type: 'slider'
+                    %}
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+
+{% schema %}
+{
+    "name": "Image Slider",
+    "class": "image-slider-text",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+        },
+        {
+            "type": "range",
+            "id": "text_position",
+            "min": 50,
+            "max": 550,
+            "step": 5,
+            "default": 375,
+            "label": "Text Right Position"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "image",
+            "name": "Image",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Image Slider",
+            "category": "Image Slider"
+        }
+    ]
+}
+{% endschema %}

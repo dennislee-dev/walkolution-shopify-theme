@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="{{ 'animation.css' | asset_url }}" type="text/css" />
+<section class="section-value-props" data-component-list="ValueProps" data-analytics-section-engagement="name:value props">
+    <!--
+    <div class="sticky-wrapper">
+        <div class="parallax-wrapper" data-anim-keyframe='{"start":"a0b - 100vh","end":"a0b","y":[0, "20vh"],"anchors": [".section-value-props"]}'>
+            <div class="video-wrapper" data-component-list="InlineVideo" data-anchor=".section-value-props" data-video-base-path="https://www.apple.com/105/media/us/airpods-max/2020/996b980b-3131-44f1-af6c-fe72f9b3bfb5/anim/supercut">
+                <picture id="overview-value-props-startframe-1" class="overview-value-props-startframe">
+                    <source srcset="https://www.apple.com/v/airpods-max/d/images/overview/value_props_startframe__fce6e99juk6e_small.jpg, /v/airpods-max/d/images/overview/value_props_startframe__fce6e99juk6e_small_2x.jpg 2x" media="(max-width:734px)">
+                    <source srcset="https://www.apple.com/v/airpods-max/d/images/overview/value_props_startframe__fce6e99juk6e_medium.jpg, /v/airpods-max/d/images/overview/value_props_startframe__fce6e99juk6e_medium_2x.jpg 2x" media="(max-width:1068px)">
+                    <source srcset="https://www.apple.com/v/airpods-max/d/images/overview/value_props_startframe__fce6e99juk6e_large.jpg, /v/airpods-max/d/images/overview/value_props_startframe__fce6e99juk6e_large_2x.jpg 2x" media="(min-width:0px)">
+                    <img src="https://www.apple.com/v/airpods-max/d/images/overview/value_props_startframe__fce6e99juk6e_large.jpg" class="overview-value-props-startframe-img" alt="">
+                </picture>
+                <video muted playsinline loop preload="none" src="https://www.apple.com/105/media/us/airpods-max/2020/996b980b-3131-44f1-af6c-fe72f9b3bfb5/anim/supercut/large.mp4"></video>
+            </div>
+            <div class="scrim" data-anim-keyframe='{"start":"a0b - 100vh","end":"a0b","opacity":[0.999,0.001],"anchors": [".section-hero"]}'></div>
+        </div>
+        <div class="controls">
+            <div class="control circle"></div>
+            <button class="control pause-icon" aria-hidden="false" aria-label="Pause background video" data-analytics-title="pause | value prop video" data-analytics-click="prop3:pause | value prop video"></button>
+            <button class="control play-icon" aria-hidden="true" aria-label="Play background video" data-analytics-title="play | value prop video" data-analytics-click="prop3:play | value prop video"></button>
+        </div>
+    </div>-->
+    <div class="section-content">
+        <ul class="value-prop-list" data-anim-keyframe='{"start":"a0t - 40vh","end":"a0t + 40vh","opacity":[0.001,0.999],"anchors":[".section-value-props .section-content"]}'>
+            <li class="value-prop value-prop-0" style="height: 50vh">
+                <p class="typography-headline-super"><b>Virtually noiseless</b><br/>Therefore can be used even in the quietest workplaces.</p>
+            </li>
+            <li class="value-prop value-prop-1">
+                <p class="typography-headline-super" style="height: 50vh"><b>Motorless use</b><br/>User-weight powered drive. No electricity cost.</p>
+            </li>
+            <li class="value-prop value-prop-2">
+                <p class="typography-headline-super" style="height: 50vh"><b>Living room ready</b><br/>The flexibility you require for new work environments.</p>
+            </li>
+            <li class="value-prop value-prop-3">
+                <p class="typography-headline-super" style="height: 50vh"><b>Easy to move</b><br/>Find your precious creative moments inside or outside.</p>
+            </li>					
+            <li class="value-prop value-prop-4">
+                <p class="typography-headline-super" style="height: 50vh"><b>Work as a team</b><br/>Easily group together for conferences / walking meetings.</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<style>
+.section-value-props:not(.no-background) .value-prop-list.show-0 { background-image: url({{'vertical-animation-slide0.jpg' | asset_url }}); }
+.section-value-props:not(.no-background) .value-prop-list.show-1 { background-image: url({{'vertical-animation-slide1.jpg' | asset_url }}); }
+.section-value-props:not(.no-background) .value-prop-list.show-2 { background-image: url({{'vertical-animation-slide2.jpg' | asset_url }}); }
+.section-value-props:not(.no-background) .value-prop-list.show-3 { background-image: url({{'vertical-animation-slide3.jpg' | asset_url }}); }
+.section-value-props:not(.no-background) .value-prop-list.show-4 { background-image: url({{'vertical-animation-slide4.jpg' | asset_url }}); }
+@media (max-width: 789px) {
+    .section-value-props:not(.no-background) .value-prop-list.show-0 { background-image: url({{'vertical-animation-slide0-mobile.jpg' | asset_url }}); }
+    .section-value-props:not(.no-background) .value-prop-list.show-1 { background-image: url({{'vertical-animation-slide1-mobile.jpg' | asset_url }}); }
+    .section-value-props:not(.no-background) .value-prop-list.show-2 { background-image: url({{'vertical-animation-slide2-mobile.jpg' | asset_url }}); }
+    .section-value-props:not(.no-background) .value-prop-list.show-3 { background-image: url({{'vertical-animation-slide3-mobile.jpg' | asset_url }}); }
+    .section-value-props:not(.no-background) .value-prop-list.show-4 { background-image: url({{'vertical-animation-slide4-mobile.jpg' | asset_url }}); }   
+}
+</style>
+<script src="{{ 'animation.js' | asset_url }}" type="text/javascript" charset="utf-8"></script>
+
+<script>
+    defer(function () {
+    jQuery(document).ready(function($) {
+    $('head').append(`
+    <link rel="prefetch" href="{{'vertical-animation-slide0.jpg' | asset_url }}">
+    <link rel="prefetch" href="{{'vertical-animation-slide1.jpg' | asset_url }}">
+    <link rel="prefetch" href="{{'vertical-animation-slide2.jpg' | asset_url }}">
+    <link rel="prefetch" href="{{'vertical-animation-slide3.jpg' | asset_url }}">
+    <link rel="prefetch" href="{{'vertical-animation-slide4.jpg' | asset_url }}">
+        <link rel="prefetch" href="{{'vertical-animation-slide0-mobile.jpg' | asset_url }}">
+        <link rel="prefetch" href="{{'vertical-animation-slide1-mobile.jpg' | asset_url }}">
+        <link rel="prefetch" href="{{'vertical-animation-slide2-mobile.jpg' | asset_url }}">
+        <link rel="prefetch" href="{{'vertical-animation-slide3-mobile.jpg' | asset_url }}">
+        <link rel="prefetch" href="{{'vertical-animation-slide4-mobile.jpg' | asset_url }}">
+    `);
+    });
+    });
+</script>
+{% schema %}
+{
+  "name": "Vertical animation images",
+  "class": "vertical-animation-images",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "Vertical animation images",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}

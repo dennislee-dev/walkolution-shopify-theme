@@ -1,0 +1,510 @@
+.section-value-props .controls,
+.digital-crown .controls {
+    position: absolute;
+    bottom: 36px;
+    right: 42px;
+    z-index: 3;
+    pointer-events: auto;
+    display: none;
+}
+@media only screen and (max-width: 320px) {
+    .section-value-props .controls,
+    .digital-crown .controls {
+        bottom: 26px;
+        right: 32px;
+    }
+}
+.section-value-props .play-icon,
+.section-value-props .pause-icon,
+.digital-crown .play-icon,
+.digital-crown .pause-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.001;
+    pointer-events: none;
+}
+@media only screen and (max-width: 734px) {
+    html.ios .section-value-props .controls {
+        bottom: 10%;
+    }
+}
+.controls {
+    width: 34px;
+    height: 34px;
+}
+@media only screen and (max-width: 734px) {
+    .controls {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+@media only screen and (max-width: 734px) and (max-width: 734px) {
+    .controls {
+        width: 26px;
+        height: 26px;
+    }
+}
+.controls .control {
+    width: 34px;
+    height: 34px;
+    background-size: contain;
+}
+@media only screen and (max-width: 734px) {
+    .controls .control {
+        width: 26px;
+        height: 26px;
+    }
+}
+.controls .play-icon {
+    background-size: auto auto;
+    background-repeat: no-repeat;
+    background-image: url("http://apple.com/v/airpods-max/d/images/overview/controls/play_icon__dbmv349kdb42_large.svg");
+}
+.dark.controls .play-icon {
+    background-repeat: no-repeat;
+    background-image: url("http://apple.com/v/airpods-max/d/images/overview/play_icon__dbmv349kdb42_large.svg");
+}
+.controls .pause-icon {
+    background-size: auto auto;
+    background-repeat: no-repeat;
+    background-image: url("http://apple.com/v/airpods-max/d/images/overview/controls/pause_icon__d19cdsq3uu4i_large.svg");
+}
+.dark.controls .pause-icon {
+    background-repeat: no-repeat;
+    background-image: url("http://apple.com/v/airpods-max/d/images/overview/pause_icon__d19cdsq3uu4i_large.svg");
+}
+.controls .circle {
+    background-size: auto auto;
+    background-repeat: no-repeat;
+    background-image: url("http://apple.com/v/airpods-max/d/images/overview/controls/buffer_icon__fy05fpe3l8mu_large.svg");
+}
+@keyframes clockwise {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.controls .circle {
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-name: clockwise;
+}
+.controls .play-icon,
+.controls .pause-icon {
+    position: absolute;
+}
+.controls.mediaobject-enhanced,
+.controls.enhanced {
+    display: block;
+}
+.controls.mediaobject-enhanced .circle,
+.controls.enhanced .circle {
+    opacity: 0.001;
+    pointer-events: none;
+}
+.controls.mediaobject-enhanced .pause-icon,
+.controls.enhanced .pause-icon {
+    opacity: 0.999;
+    pointer-events: all;
+}
+.controls.mediaobject-enhanced.paused .pause-icon,
+.controls.enhanced.paused .pause-icon {
+    opacity: 0.001;
+    pointer-events: none;
+}
+.controls.mediaobject-enhanced.paused .play-icon,
+.controls.enhanced.paused .play-icon {
+    opacity: 0.999;
+    pointer-events: all;
+}
+.controls.hide-controls {
+    visibility: hidden;
+}
+.section-value-props .section-content {
+    pointer-events: none;
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+@media only screen and (min-width: 1441px) {
+    .section-value-props .section-content {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 734px) {
+    .section-value-props .section-content {
+        text-align: left;
+    }
+}
+.section-value-props ul {
+    list-style: none;
+    position: relative; */
+    padding: 50vh 0 25vh;
+    margin: 0;
+    transition: transform .8s,opacity .8s,background-image .8s ease-in-out;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+@media (min-width: 790px) {
+    .section-value-props ul {        
+        background-attachment: fixed;
+    }
+}
+.section-value-props.no-background ul {
+    background: #fff;
+}
+.section-value-props ul::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.section-value-props .value-prop {
+    opacity: 0.001;
+    color: #fff;
+    transition: transform 0.4s, opacity 0.4s;
+    padding-left: 0;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: relative;
+    width: 100%;
+}
+@media (max-width: 798px) {
+    .section-value-props .value-prop {
+        padding-left: 0;
+    }
+}
+.section-value-props .value-prop.height40 {
+    height: 40vh;
+}
+.section-value-props.resiza-image .value-prop {
+    padding-left: 0;
+}
+.section-value-props .centered-text .value-prop {
+    padding-left: 0;
+}
+.section-value-props .value-prop a {
+    pointer-events: none;
+}
+.section-value-props .resizable-image {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    left: 0;
+    right: 0;
+    top: 0;
+    position: sticky;
+    z-index: 0;
+}
+.section-value-props .resizable-image .clear-elements {
+    width: 100%;
+}
+.section-value-props .resizable-image > div {
+    width: 100%;
+    transition: all .8s;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.section-value-props .resizable-image > div:last-child {
+    opacity: 0.001;
+    transform: translateY(70px);
+    max-height: 50vh;
+    width: 500px;
+    max-width: 50%;
+}
+.section-value-props .value-prop-list.show-0 .value-prop-0 {
+    opacity: 0.999;
+    transform: translate(0);
+}
+.section-value-props .value-prop-list.show-0.reached-top .resizable-image > div:first-child,
+.section-value-props .value-prop-list.show-1 .resizable-image > div:first-child,
+.section-value-props .value-prop-list.show-2 .resizable-image > div:first-child,
+.section-value-props .value-prop-list.show-3 .resizable-image > div:first-child,
+.section-value-props .value-prop-list.show-4 .resizable-image > div:first-child {
+    max-height: 50vh;
+    width: 500px;    
+    transition: all .8s;
+}
+.section-value-props .value-prop-list.show-0.reached-top .resizable-image > div:first-child,
+.section-value-props .value-prop-list.show-1 .resizable-image > div:first-child,
+.section-value-props .value-prop-list.show-2 .resizable-image > div:first-child {
+    transform: translateY(25vh);
+}
+.section-value-props .value-prop-list.show-3 .resizable-image > div:first-child,
+.section-value-props .value-prop-list.show-4 .resizable-image > div:first-child {
+    opacity: 0.001;
+    transform: translateY(-70px);
+    transition: all 1.6s;
+}
+.section-value-props .value-prop-list.show-3 .resizable-image > div:last-child,
+.section-value-props .value-prop-list.show-4 .resizable-image > div:last-child {
+    opacity: 0.999;
+    transform: translateY(-25vh);
+    transition: all 1.6s;
+}
+.section-value-props .value-prop-list.show-0 .value-prop-0 a {
+    pointer-events: all;
+}
+.section-value-props .value-prop-list.show-0 .value-prop-1 {
+    transform: translateY(70px);
+}
+.section-value-props .value-prop-list.show-0 .value-prop-2 {
+    transform: translateY(70px);
+}
+.section-value-props .value-prop-list.show-0 .value-prop-3 {
+    transform: translateY(70px);
+}
+.section-value-props .value-prop-list.show-0 .value-prop-4 {
+    transform: translateY(70px);
+}
+.section-value-props .value-prop-list.show-1 .value-prop-1 {
+    opacity: 0.999;
+    transform: translate(0);
+}
+.section-value-props .value-prop-list.show-1 .value-prop-1 a {
+    pointer-events: all;
+}
+.section-value-props .value-prop-list.show-1 .value-prop-2 {
+    transform: translateY(70px);
+}
+.section-value-props .value-prop-list.show-1 .value-prop-3 {
+    transform: translateY(70px);
+}
+.section-value-props .value-prop-list.show-1 .value-prop-4 {
+    transform: translateY(70px);
+}
+.section-value-props .value-prop-list.show-1 .value-prop-0 {
+    transform: translateY(-70px);
+}
+.section-value-props .value-prop-list.show-2 .value-prop-2 {
+    opacity: 0.999;
+    transform: translate(0);
+}
+.section-value-props .value-prop-list.show-2 .value-prop-2 a {
+    pointer-events: all;
+}
+.section-value-props .value-prop-list.show-2 .value-prop-3 {
+    transform: translateY(70px);
+}
+.section-value-props .value-prop-list.show-2 .value-prop-4 {
+    transform: translateY(70px);
+}
+.section-value-props .value-prop-list.show-2 .value-prop-0 {
+    transform: translateY(-70px);
+}
+.section-value-props .value-prop-list.show-2 .value-prop-1 {
+    transform: translateY(-70px);
+}
+.section-value-props .value-prop-list.show-3 .value-prop-3 {
+    opacity: 0.999;
+    transform: translate(0);
+}
+.section-value-props .value-prop-list.show-3 .value-prop-3 a {
+    pointer-events: all;
+}
+.section-value-props .value-prop-list.show-3 .value-prop-4 {
+    transform: translateY(70px);
+}
+.section-value-props .value-prop-list.show-3 .value-prop-0 {
+    transform: translateY(-70px);
+}
+.section-value-props .value-prop-list.show-3 .value-prop-1 {
+    transform: translateY(-70px);
+}
+.section-value-props .value-prop-list.show-3 .value-prop-2 {
+    transform: translateY(-70px);
+}
+.section-value-props .value-prop-list.show-4 .value-prop-4 {
+    opacity: 0.999;
+    transform: translate(0);
+}
+.section-value-props .value-prop-list.show-4 .value-prop-4 a {
+    pointer-events: all;
+}
+.section-value-props .value-prop-list.show-4 .value-prop-5 {
+    transform: translateY(70px);
+}
+.section-value-props .value-prop-list.show-4 .value-prop-4 {
+    transform: translateY(70px);
+}
+.section-value-props .value-prop-list.show-4 .value-prop-0 {
+    transform: translateY(-70px);
+}
+.section-value-props .value-prop-list.show-4 .value-prop-1 {
+    transform: translateY(-70px);
+}
+.section-value-props .value-prop-list.show-4 .value-prop-2 {
+    transform: translateY(-70px);
+}
+.section-value-props .value-prop-list.show-4 .value-prop-3 {
+    transform: translateY(-70px);
+}
+@media only screen and (max-width: 374px) {
+    .section-value-props .typography-headline-super {
+        font-size: 40px;
+    }
+}
+.typography-headline-super {
+    font-family: Inter;
+    text-align: left;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: #FFFFFF;
+    padding: 0 25px;
+}
+.typography-headline-super b {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 48px;
+}
+
+@media (max-width: 798px) {
+    .typography-headline-super { 
+        font-size: 24px;
+    }
+    .typography-headline-super b {
+        font-size: 36px;
+        line-height: 36px;
+    }
+}
+.centered-text .typography-headline-super {
+    text-align: center;
+}
+.no-background .typography-headline-super {
+    color: #000;
+    font-size: 18px;
+    max-width: calc(50% - 360px);
+    padding-left: 50px;
+    position: relative;
+    z-index: 1;
+}
+.no-background .typography-headline-super b {
+    font-size: 32px;
+    line-height: 40px;
+}
+.no-background .value-prop.align-right .typography-headline-super {
+    margin-left: auto;
+    padding-right: 50px;
+}
+
+.section-value-props .button:focus {
+    box-shadow: 0 0 0 4px rgba(0, 125, 250, 0.6);
+    outline: none;
+}
+.section-value-props .button:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
+.section-value-props .button:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
+    box-shadow: none;
+}
+.section-value-props .button:active {
+    outline: none;
+}
+.section-value-props .button:disabled,
+.section-value-props .button.disabled {
+    cursor: default;
+}
+.section-value-props .button:lang(ar) {
+    letter-spacing: 0em;
+     
+}
+.section-value-props .button:lang(ja) {
+    letter-spacing: 0em;
+}
+.section-value-props .button:lang(ko) {
+    letter-spacing: 0em;
+}
+.section-value-props .button:lang(zh) {
+    letter-spacing: 0em;
+}
+.section-value-props .button:hover {
+    background: #0077ed;
+}
+.section-value-props .button:active {
+    background: #006edb;
+}
+.section-value-props .button:disabled,
+.section-value-props .button.disabled {
+    background: #0071e3;
+    color: #fff;
+    opacity: 0.32;
+}
+.section-value-props .button:lang(ar) {
+    letter-spacing: 0em;
+}
+.section-value-props .button:lang(ja) {
+    letter-spacing: 0em;
+}
+.section-value-props .button:lang(ko) {
+    letter-spacing: 0em;
+}
+.section-value-props .button:lang(zh) {
+    letter-spacing: 0em;
+}
+@media only screen and (max-width: 734px) {
+    .section-value-props .button {
+        color: #fff;
+        border: 1px solid #fff;
+        background: none;
+    }
+}
+@media only screen and (max-width: 734px) {
+    .section-value-props .button.small-solid {
+        color: #1d1d1f;
+        border: none;
+        background-color: #fff;
+    }
+}
+@media only screen and (max-width: 734px) {
+    .section-value-props .button.small-solid:hover {
+        color: #1d1d1f;
+        border: none;
+        background-color: #fff;
+        opacity: 0.9;
+    }
+}
+.section-value-props .button:hover {
+    color: #1d1d1f;
+    background-color: #fff;
+    opacity: 0.9;
+    text-decoration: none;
+}
+.section-value-props .button:hover .icon-copy {
+    text-decoration: none;
+}
+@media only screen and (max-width: 734px) {
+    .section-value-props .button:hover {
+        background: none;
+        text-decoration: none;
+        color: #fff;
+        opacity: 0.8;
+    }
+}
+.section-value-props .button-inactive {
+    cursor: auto;
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: initial;
+    -webkit-backdrop-filter: none;
+}
+.section-value-props .button-inactive:hover {
+    color: #fff;
+    background-color: initial;
+    text-decoration: none;
+}
+.section-value-props .button .icon-after {
+    display: none;
+}
